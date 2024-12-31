@@ -1,3 +1,4 @@
+<div dir="rtl" style="text-align: right;">
 
 # Week-8-Collect-And-Avoid
   
@@ -32,17 +33,11 @@
 * בדיקת ניצחון כאשר הניקוד מגיע ל-10 נקודות.
 * הורדת חיים כאשר פוגעים בפצצה.
 * הפסקת המשחק במקרה שהשחקן מאבד את כל החיים.
-
-
 4. FoodSpawner
 * אחראי על יצירת פירות ופצצות במיקומים אקראיים בתוך גבולות המסך.
-
-
 5. DestroyOffScreen
 * מוחק אובייקטים שיצאו מגבולות המסך, כמו פירות או פצצות שלא נאספו.
-
 ![](https://github.com/Make-a-game-R-and-E/Week-8-Collect-And-Avoid/blob/main/pictures/Workflow.png)
-
 ----
 
 **חוקי המשחק :**
@@ -56,3 +51,6 @@
 
 [itch](https://ronylevy1.itch.io/week-8-collectavoid)
 
+
+
+</div>
