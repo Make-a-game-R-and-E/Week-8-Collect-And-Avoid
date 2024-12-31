@@ -10,7 +10,7 @@
 
 יחסי המחלקות:
 
-![](C:\Users\ronik\Collect&Avoid\pictures)
+![](https://github.com/Make-a-game-R-and-E/Week-8-Collect-And-Avoid/blob/main/pictures/Workflow.png)
 
 
 [itch](https://ronylevy1.itch.io/week-8-collectavoid)
