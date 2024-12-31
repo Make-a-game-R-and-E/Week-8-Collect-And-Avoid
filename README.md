@@ -10,5 +10,7 @@
 
 יחסי המחלקות:
 
+![](C:\Users\ronik\Collect&Avoid\pictures)
+
 
 [itch](https://ronylevy1.itch.io/week-8-collectavoid)
