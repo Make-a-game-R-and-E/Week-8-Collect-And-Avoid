@@ -1,56 +1,54 @@
-<div dir="rtl" style="text-align: right;">
-
 # Week-8-Collect-And-Avoid
-  
-----
-**אוסף הפירות**
-
-תיאור המשחק :
-
-במשחק זה תשחקו בתור סלסילה, והמטרה שלכם היא לאסוף 10 פירות כדי לנצח.
-תוכלו לשלוט בסלסילה באמצעות המקשים W, A, S, D.
-היזהרו מפצצות! אם תגעו בהן, תאבדו חיים. אם תאבדו את כל שלושת החיים – תפסלו והמשחק יסתיים.
-
-
----
-**יחסי המחלקות :**
-
-המשחק בנוי במבנה המחלקות הבא:
-
-
-1. Player
-   * אחראי על תנועת השחקן על המסך.
-   * מחובר לBasket, המייצג את הדמות הראשית (הסלסילה).
-
-
-2. Basket
-* הדמות הראשית שנשלטת על ידי השחקן.
-* מחוברת לGameManager.
-
-3. GameManager
-* אחראי על ניהול המשחק:
-* העלאת הניקוד בכל פעם שנאסף פרי.
-* בדיקת ניצחון כאשר הניקוד מגיע ל-10 נקודות.
-* הורדת חיים כאשר פוגעים בפצצה.
-* הפסקת המשחק במקרה שהשחקן מאבד את כל החיים.
-4. FoodSpawner
-* אחראי על יצירת פירות ופצצות במיקומים אקראיים בתוך גבולות המסך.
-5. DestroyOffScreen
-* מוחק אובייקטים שיצאו מגבולות המסך, כמו פירות או פצצות שלא נאספו.
-![](https://github.com/Make-a-game-R-and-E/Week-8-Collect-And-Avoid/blob/main/pictures/Workflow.png)
-----
-
-**חוקי המשחק :**
-אספו 10 פירות כדי לנצח.
-הימנעו מפצצות – פגיעה בהן תגרום לאובדן חיים.
-אם תאבדו את כל שלושת החיים שלכם, המשחק יסתיים בהפסד.
 
 ---
 
-קישור למשחק :
+**Collect the Fruits**
+
+**Game Description:**
+
+In this game, you play as a basket, and your goal is to collect 10 fruits to win.  
+You can control the basket using the W, A, S, D keys.  
+Be careful from the bomb ! If you touch them, you lose a life. If you lose all three lives, you will lose, and the game will end.
+
+---
+
+**Game Rules:**
+
+- Collect 10 fruits to win.  
+- Avoid bombs – touching them will cause you to lose a life.  
+- If you lose all three lives, the game will end in failure.
+
+---
+
+**Class Relationships:**
+
+The game is structured with the following class relationships:
+
+1. **Player**  
+   * Responsible for the player's movement on the screen.  
+   * Connected to the `Basket`, which represents the main character (the basket).
+
+2. **Basket**  
+   * The main character controlled by the player.  
+   * Connected to the `GameManager`.
+
+3. **GameManager**  
+   * Responsible for managing the game:  
+     - Increasing the score every time a fruit is collected.  
+     - Checking for victory when the score reaches 10 points.  
+     - Decreasing lives when hitting a bomb.  
+     - Ending the game if the player loses all their lives.
+
+4. **FoodSpawner**  
+   * Responsible for spawning fruits and bombs at random locations within the screen boundaries.
+
+5. **DestroyOffScreen**  
+   * Deletes objects that go off-screen, such as uncollected fruits or bombs.
+
+![Workflow](https://github.com/Make-a-game-R-and-E/Week-8-Collect-And-Avoid/blob/main/pictures/Workflow.png)
+
+---
+
+**Game Link:**
 
 [itch](https://ronylevy1.itch.io/week-8-collectavoid)
-
-
-
-</div>
