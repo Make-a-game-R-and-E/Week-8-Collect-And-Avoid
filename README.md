@@ -1,4 +1,6 @@
+
 # Week-8-Collect-And-Avoid
+  
 ----
 **אוסף הפירות**
 
@@ -50,6 +52,7 @@
 
 ---
 
-
+קישור למשחק :
 
 [itch](https://ronylevy1.itch.io/week-8-collectavoid)
+
