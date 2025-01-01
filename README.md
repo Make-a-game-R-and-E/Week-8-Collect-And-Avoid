@@ -40,7 +40,8 @@ Manages the game:
 5.DestroyOffScreen
 * Removes objects that move out of the screen boundaries, such as uncollected fruits or bombs.
 
-![]()
+![](https://github.com/Make-a-game-R-and-E/Week-8-Collect-And-Avoid/blob/main/pictures/Workflow.png)
 ---
 Game Link:
+
 Play on itch.io
