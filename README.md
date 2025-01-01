@@ -44,4 +44,4 @@ Manages the game:
 ---
 Game Link:
 
-Play on itch.io
+[itch](https://ronylevy1.itch.io/week-8-collectavoid)
