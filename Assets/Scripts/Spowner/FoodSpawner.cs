@@ -29,31 +29,31 @@ public class FoodSpawner : MonoBehaviour
     }
 
     void CreateWeightedPrefabList()
-{
-    // Calculate the total weight
-    int totalWeight = (fruitWeight * fruitPrefabs.Length) + (bombWeight * bombPrefabs.Length);
-    weightedPrefabs = new GameObject[totalWeight];
-
-    int index = 0;
-
-    // Add fruits to the weighted list
-    foreach (var fruit in fruitPrefabs)
     {
-        for (int i = 0; i < fruitWeight; i++)
+        // Calculate the total weight
+        int totalWeight = (fruitWeight * fruitPrefabs.Length) + (bombWeight * bombPrefabs.Length);
+        weightedPrefabs = new GameObject[totalWeight];
+
+        int index = 0;
+
+        // Add fruits to the weighted list
+        foreach (var fruit in fruitPrefabs)
         {
-            weightedPrefabs[index++] = fruit;
+            for (int i = 0; i < fruitWeight; i++)
+            {
+                weightedPrefabs[index++] = fruit;
+            }
+        }
+
+        // Add bombs to the weighted list
+        foreach (var bomb in bombPrefabs)
+        {
+            for (int i = 0; i < bombWeight; i++)
+            {
+                weightedPrefabs[index++] = bomb;
+            }
         }
     }
-
-    // Add bombs to the weighted list
-    foreach (var bomb in bombPrefabs)
-    {
-        for (int i = 0; i < bombWeight; i++)
-        {
-            weightedPrefabs[index++] = bomb;
-        }
-    }
-}
 
 
     IEnumerator SpawnFood()

@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        Vector3 newPosition = transform.position; // Get the current position
+        Vector3 newPosition = transform.position;// Get the current position
 
         if (moveRight.IsPressed() && newPosition.x < maxX)
         {
