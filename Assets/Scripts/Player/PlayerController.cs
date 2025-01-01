@@ -55,10 +55,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-       Vector3 newPosition = transform.position; // Get the current position
+        Vector3 newPosition = transform.position; // Get the current position
 
-
-        if (moveRight.IsPressed() && newPosition.x < maxX) 
+        if (moveRight.IsPressed() && newPosition.x < maxX)
         {
             newPosition += new Vector3(speed, 0, 0) * Time.deltaTime;
         }
@@ -81,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
         transform.position = newPosition; // Update the position
     }
 
-     void UpdateScreenBounds()
+    void UpdateScreenBounds()
     {
         // Calculate the screen boundaries
         Camera mainCamera = Camera.main;
