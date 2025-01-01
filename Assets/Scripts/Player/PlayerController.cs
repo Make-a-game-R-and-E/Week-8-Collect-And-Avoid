@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float speed = 10f; // Speed of the player
-    Rigidbody2D rb; 
+    Rigidbody2D rb;
     float minX = -5f; // Minimum x boundary
     float maxX = 5f;  // Maximum x boundary
 
