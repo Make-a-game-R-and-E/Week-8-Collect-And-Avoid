@@ -5,11 +5,17 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float speed = 10f; // Speed of the player
     Rigidbody2D rb;
-    float minX = -5f; // Minimum x boundary
-    float maxX = 5f;  // Maximum x boundary
+    float minBoundaryX = -5f; // Minimum x boundary
+    float maxBoundaryX = 5f;  // Maximum x boundary
 
-    float minY = -5f; // Minimum y boundary
-    float maxY = 5f;  // Maximum y boundary
+    float minBoundaryY = -5f; // Minimum y boundary
+    float maxBoundaryY = 5f;  // Maximum y boundary
+
+    // Direction vectors for movement
+    Vector3 rightDirection = new Vector3(1, 0, 0);
+    Vector3 leftDirection = new Vector3(-1, 0, 0);
+    Vector3 upDirection = new Vector3(0, 1, 0);
+    Vector3 downDirection = new Vector3(0, -1, 0);
 
     [SerializeField]
     [Tooltip("Input action for moving right")]
@@ -50,47 +56,48 @@ public class PlayerMovement : MonoBehaviour
 
         // Update the screen bounds
         UpdateScreenBounds();
-
     }
 
     void Update()
     {
-        Vector3 newPosition = transform.position;// Get the current position
+        Vector3 newPosition = transform.position; // Get the current position
 
-        if (moveRight.IsPressed() && newPosition.x < maxX)
+        if (moveRight.IsPressed() && newPosition.x < maxBoundaryX)
         {
-            newPosition += new Vector3(speed, 0, 0) * Time.deltaTime;
+            newPosition += rightDirection * speed * Time.deltaTime;
         }
-        if (moveLeft.IsPressed() && newPosition.x > minX)
+        if (moveLeft.IsPressed() && newPosition.x > minBoundaryX)
         {
-            newPosition += new Vector3(-speed, 0, 0) * Time.deltaTime;
+            newPosition += leftDirection * speed * Time.deltaTime;
         }
-        if (moveUp.IsPressed() && newPosition.y < maxY)
+        if (moveUp.IsPressed() && newPosition.y < maxBoundaryY)
         {
-            newPosition += new Vector3(0, speed, 0) * Time.deltaTime;
+            newPosition += upDirection * speed * Time.deltaTime;
         }
-        if (moveDown.IsPressed() && newPosition.y > minY)
+        if (moveDown.IsPressed() && newPosition.y > minBoundaryY)
         {
-            newPosition += new Vector3(0, -speed, 0) * Time.deltaTime;
+            newPosition += downDirection * speed * Time.deltaTime;
         }
 
-        newPosition.x = Mathf.Clamp(newPosition.x, minX, maxX); // Update the x position
-        newPosition.y = Mathf.Clamp(newPosition.y, minY, maxY); // Update the y position
+        newPosition.x = Mathf.Clamp(newPosition.x, minBoundaryX, maxBoundaryX); // Clamp x position
+        newPosition.y = Mathf.Clamp(newPosition.y, minBoundaryY, maxBoundaryY); // Clamp y position
 
         transform.position = newPosition; // Update the position
     }
 
     void UpdateScreenBounds()
     {
-        // Calculate the screen boundaries
         Camera mainCamera = Camera.main;
-        Vector3 screenBottomLeft = mainCamera.ViewportToWorldPoint(new Vector3(0, 0, 0));
-        Vector3 screenTopRight = mainCamera.ViewportToWorldPoint(new Vector3(1, 1, 0));
 
-        minX = screenBottomLeft.x;
-        maxX = screenTopRight.x;
-        minY = screenBottomLeft.y;
-        maxY = screenTopRight.y;
+        // Get the orthographic size of the camera 
+        float verticalExtent = mainCamera.orthographicSize;
+        float horizontalExtent = verticalExtent * Screen.width / Screen.height;
+
+        // Calculate screen boundaries
+        minBoundaryX = mainCamera.transform.position.x - horizontalExtent;
+        maxBoundaryX = mainCamera.transform.position.x + horizontalExtent;
+        minBoundaryY = mainCamera.transform.position.y - verticalExtent;
+        maxBoundaryY = mainCamera.transform.position.y + verticalExtent;
     }
 
 }

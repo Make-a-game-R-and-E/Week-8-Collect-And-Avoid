@@ -13,6 +13,9 @@ public class FoodSpawner : MonoBehaviour
 
     GameObject[] weightedPrefabs; // List of weighted prefabs
     float screenTopY; // Top screen border
+    int index = 0;
+
+    Vector3 vecCamera = new Vector3(0, 1, 0);
 
     void Start()
     {
@@ -25,7 +28,7 @@ public class FoodSpawner : MonoBehaviour
     {
         // Calculate the top screen border
         Camera mainCamera = Camera.main;
-        screenTopY = mainCamera.ViewportToWorldPoint(new Vector3(0, 1, 0)).y + aboveScreenOffset;
+        screenTopY = mainCamera.ViewportToWorldPoint(vecCamera).y + aboveScreenOffset;
     }
 
     void CreateWeightedPrefabList()
@@ -34,7 +37,6 @@ public class FoodSpawner : MonoBehaviour
         int totalWeight = (fruitWeight * fruitPrefabs.Length) + (bombWeight * bombPrefabs.Length);
         weightedPrefabs = new GameObject[totalWeight];
 
-        int index = 0;
 
         // Add fruits to the weighted list
         foreach (var fruit in fruitPrefabs)

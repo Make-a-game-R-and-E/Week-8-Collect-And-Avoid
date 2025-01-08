@@ -4,11 +4,13 @@ public class DestroyOffScreen : MonoBehaviour
 {
     float screenBottomY; // Down screen border
 
+    Vector3 vecCamera = new Vector3(0, 0, 0);
+
     void Start()
     {
         // Get the down screen border
         Camera mainCamera = Camera.main;
-        screenBottomY = mainCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).y;
+        screenBottomY = mainCamera.ViewportToWorldPoint(vecCamera).y;
     }
 
     void Update()
